@@ -1,0 +1,50 @@
+import wollok.game.*
+import hector.*
+import plantas.*
+
+
+program granja {
+
+	//	CONFIG	
+	game.title("Hector el granjero")
+	game.height(15)
+	game.width(20)
+	game.ground("ground.png")
+	
+	
+	// VISUALES
+	
+	game.addVisual(hector)
+
+	// COLISIONES
+	
+	// TECLADO
+	
+	keyboard.up().onPressDo 	{hector.moverEnY(1)}
+	keyboard.down().onPressDo 	{hector.moverEnY(-1)}
+	keyboard.left().onPressDo 	{hector.moverEnX(-1)}
+	keyboard.right().onPressDo	{hector.moverEnX(1)}
+	keyboard.m().onPressDo	{hector.plantarMaiz()}
+	keyboard.t().onPressDo	{hector.plantarTrigo()}
+	keyboard.o().onPressDo	{hector.plantarTomaco()} // buscar methdos de posicion 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//	START
+	game.start()
+}
