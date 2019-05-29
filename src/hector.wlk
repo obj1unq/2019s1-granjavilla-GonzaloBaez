@@ -30,12 +30,21 @@ object hector {
 		game.addVisual(new Tomaco(posicionX = posicionXHector,posicionY = posicionYHector))
 	}
 	method hayAlgoPlantado(){
-		return not (game.getObjectsIn(game.at(posicionXHector,posicionYHector)) == [self])
+		return not (self.objetosDelLugar() == [self])
 	}
 	method validarQueHayAlgoPlantado(){
 		if (self.hayAlgoPlantado()){
 			throw new UserException ("ya hay algo plantado")
 		}
+	}
+	method plantaDeLugar(){
+		return self.objetosDelLugar().filter{cosa => not (cosa == self)}.first()
+	}
+	method objetosDelLugar(){
+		return game.getObjectsIn(game.at(posicionXHector,posicionYHector))
+	}
+	method regarPlantaDeLugar(){
+		self.plantaDeLugar().regar()
 	}
 }
 

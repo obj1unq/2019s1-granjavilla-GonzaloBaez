@@ -7,7 +7,7 @@ program granja {
 
 	//	CONFIG	
 	game.title("Hector el granjero")
-	game.height(15)
+	game.height(13)
 	game.width(20)
 	game.ground("ground.png")
 	
@@ -28,8 +28,7 @@ program granja {
 	keyboard.t().onPressDo	{hector.plantarTrigo()}
 	keyboard.o().onPressDo	{hector.plantarTomaco()} // buscar methdos de posicion 
 
-
-
+	keyboard.r().onPressDo	{hector.regarPlantaDeLugar()}
 
 
 
