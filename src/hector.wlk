@@ -9,9 +9,11 @@ object hector {
 	method position() = game.at(posicionXHector,posicionYHector)
 	
 	method moverEnX(direccion){
+		if ((posicionXHector + direccion) <= (game.width() - 1) && (posicionXHector + direccion) >= 0)
 		posicionXHector += direccion
 	}
 		method moverEnY(direccion){
+		if ((posicionYHector + direccion) <= (game.height() - 1) && (posicionYHector + direccion) >= 0)
 		posicionYHector += direccion
 	}
 	
